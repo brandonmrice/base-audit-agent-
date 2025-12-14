@@ -1,0 +1,5 @@
+{
+  "name": "Base Audit Agent",
+  "description": "Automated security and performance auditing for Base ecosystem mini-apps, AI agents, and smart contracts.",
+  "requestFramePermissions": []
+}

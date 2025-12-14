@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base Audit Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['VT323', 'monospace'],
+              mono: ['VT323', 'monospace'],
+            },
+            colors: {
+              base: {
+                blue: '#0052FF',
+                dark: '#050505',
+                card: '#111111',
+              }
+            },
+            boxShadow: {
+              'pixel': '4px 4px 0px 0px rgba(0,0,0,0.5)',
+              'pixel-blue': '4px 4px 0px 0px rgba(0,82,255,0.4)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Global Retro Reset */
+      * {
+        border-radius: 0 !important;
+      }
+      
+      body {
+        background-color: #050505;
+        color: #e0e0e0;
+        /* Subtle scanline/pixel grid effect */
+        background-image: 
+          linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+          linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+        background-size: 100% 3px, 3px 100%;
+        font-size: 18px; /* VT323 is smaller than Inter, bumping base size */
+      }
+
+      /* Blocky inputs */
+      input, button, select, textarea {
+        outline: none;
+      }
+      
+      input:focus, textarea:focus, select:focus {
+        outline: 2px solid #0052FF;
+        outline-offset: -2px;
+      }
+
+      /* Retro Scrollbar */
+      ::-webkit-scrollbar {
+        width: 14px;
+        background: #111;
+        border-left: 2px solid #333;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #0052FF;
+        border: 2px solid #111;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #3370FF;
+      }
+
+      /* Utility for hiding scrollbar but keeping functionality */
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.5.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
